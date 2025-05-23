@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- First Kinect camera -->
+  <group ns="kinect1">
+    <include file="$(find azure_kinect_ros_driver)/launch/kinect_rgbd.launch">
+      <arg name="camera" value="k4a_1" />
+      <arg name="tf_prefix" value="kinect1_" />
+      <arg name="color_resolution" value="1440P" />
+      <arg name="fps" value="30" />
+    </include>
+  </group>
+
+  <!-- Second Kinect camera -->
+  <group ns="kinect2">
+    <include file="$(find azure_kinect_ros_driver)/launch/kinect_rgbd.launch">
+      <arg name="camera" value="k4a_2" />
+      <arg name="tf_prefix" value="kinect2_" />
+       <arg name="color_resolution" value="1440P" />
+      <arg name="fps" value="30" />
+    </include>
+  </group>
+</launch>
